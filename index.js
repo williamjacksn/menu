@@ -1,6 +1,11 @@
 const template = document.querySelector('template');
 const orderItemList = document.querySelector('.list-group');
 const orderTotal = document.getElementById('order-total');
+const totalBadge = orderTotal.querySelector('.badge');
+
+function formatMoney(amount) {
+    return '$' + amount.toFixed(2);
+}
 
 document.querySelectorAll('.card').forEach(el => {
     el.addEventListener('click', ev => {
@@ -14,11 +19,9 @@ document.querySelectorAll('.card').forEach(el => {
         orderItemList.insertBefore(newItem, orderTotal);
 
         let numericPrice = parseFloat(price.replace(/[^0-9.-]+/g, ''));
-        let totalBadge = orderTotal.querySelector('.badge');
-        console.log(totalBadge);
         let currentTotal = parseFloat(totalBadge.dataset.number);
         let newTotal = currentTotal + numericPrice;
         totalBadge.setAttribute('data-number', newTotal);
-        totalBadge.textContent = '$' + newTotal.toFixed(2);
+        totalBadge.textContent = formatMoney(newTotal);
     });
 });
