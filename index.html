@@ -7,10 +7,21 @@
         <title>Menu</title>
     </head>
     <body>
+        <template>
+            <li class="align-items-center d-flex justify-content-between list-group-item">
+                <span class="item-name"></span>
+                <span class="badge item-price text-bg-secondary"></span>
+            </li>
+        </template>
         <div class="container-fluid">
-            <div class="pt-3 row">
+            <div class="pb-2 pt-2 row">
                 <div class="col">
-                    <p class="text-secondary">Tap an item to add to the order</p>
+                    <ul class="list-group">
+                        <li class="align-items-center d-flex justify-content-between list-group-item" id="order-total">
+                            <strong>Order total</strong>
+                            <span class="badge text-bg-primary" data-number="0">$0.00</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="gx-2 row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6">
