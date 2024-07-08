@@ -7,7 +7,17 @@
         <title>Menu</title>
     </head>
     <body>
-        <template>
+        <template id="menu-item-template">
+            <div class="col mb-2">
+                <div class="card h-100">
+                    <img class="card-img-top">
+                    <div class="card-body"></div>
+                    <div class="card-footer fw-bold"></div>
+                </div>
+            </div>
+        </template>
+
+        <template id="ordered-item-template">
             <li class="align-items-center d-flex justify-content-between list-group-item">
                 <span class="item-name"></span>
                 <span class="badge item-price text-bg-secondary"></span>
@@ -30,64 +40,7 @@
                     <ul class="collapse list-group mb-2" id="ordered-items"></ul>
                 </div>
             </div>
-            <div class="gx-2 row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6">
-                <div class="col mb-2">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="img/cheese-pizza.webp">
-                        <div class="card-body">Cheese pizza</div>
-                        <div class="card-footer fw-bold">$5.00</div>
-                    </div>
-                </div>
-                <div class="col mb-2">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="img/pepperoni-pizza.jpg">
-                        <div class="card-body">Pepperoni pizza</div>
-                        <div class="card-footer fw-bold">$6.00</div>
-                    </div>
-                </div>
-                <div class="col mb-2">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="img/supreme-pizza.jpg">
-                        <div class="card-body">Supreme pizza</div>
-                        <div class="card-footer fw-bold">$10.00</div>
-                    </div>
-                </div>
-                <div class="col mb-2">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="img/hamburger.jpg">
-                        <div class="card-body">Hamburger</div>
-                        <div class="card-footer fw-bold">$6.00</div>
-                    </div>
-                </div>
-                <div class="col mb-2">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="img/cheeseburger.jpg">
-                        <div class="card-body">Cheeseburger</div>
-                        <div class="card-footer fw-bold">$7.00</div>
-                    </div>
-                </div>
-                <div class="col mb-2">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="img/caesar-salad.jpg">
-                        <div class="card-body">Caesar salad</div>
-                        <div class="card-footer fw-bold">$3.00</div>
-                    </div>
-                </div>
-                <div class="col mb-2">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="img/french-fries.jpg">
-                        <div class="card-body">French fries</div>
-                        <div class="card-footer fw-bold">$3.50</div>
-                    </div>
-                </div>
-                <div class="col mb-2">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="img/lemonade.jpg">
-                        <div class="card-body">Lemonade</div>
-                        <div class="card-footer fw-bold">$0.99</div>
-                    </div>
-                </div>
-            </div>
+            <div class="gx-2 row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6" id="menu-items"></div>
         </div>
         <script src="bootstrap-5.3.3.bundle.js"></script>
         <script src="index.js"></script>
