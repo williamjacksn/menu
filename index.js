@@ -72,6 +72,11 @@ const menuItemData = [
         imgSrc: 'img/french-fries.jpg'
     },
     {
+        itemName: 'Cherry pie',
+        itemPrice: 1,
+        imgSrc: 'img/cherry-pie.jpg'
+    },
+    {
         itemName: 'Lemonade',
         itemPrice: .99,
         imgSrc: 'img/lemonade.jpg'
