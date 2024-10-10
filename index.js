@@ -10,6 +10,24 @@ function formatMoney(amount) {
     return '$' + amount.toFixed(2);
 }
 
+function adjustOrderedItemCount(delta) {
+    let currentCount = parseInt(itemCount.textContent.replace(/[^0-9]+/g, ''));
+    let newCount = currentCount + delta;
+    let plural = 's';
+    if (newCount === 1) {
+        plural = '';
+    }
+    itemCount.textContent = `(${newCount} item${plural})`;
+   
+}
+
+function adjustTotalPrice(delta) {
+    let currentTotal = parseFloat(totalBadge.dataset.number);
+    let newTotal = currentTotal + delta;
+    totalBadge.dataset.number = newTotal;
+    totalBadge.textContent = formatMoney(newTotal);
+}
+
 function menuItemClicked(ev) {
     let card = ev.target.closest('.card');
     let itemName = card.querySelector('.card-body').textContent;
@@ -21,18 +39,9 @@ function menuItemClicked(ev) {
     orderItemList.appendChild(newItem);
 
     let numericPrice = parseFloat(price.replace(/[^0-9.-]+/g, ''));
-    let currentTotal = parseFloat(totalBadge.dataset.number);
-    let newTotal = currentTotal + numericPrice;
-    totalBadge.dataset.number = newTotal;
-    totalBadge.textContent = formatMoney(newTotal);
+    adjustTotalPrice(numericPrice);
 
-    let currentCount = parseInt(itemCount.textContent.replace(/[^0-9]+/g, ''));
-    let newCount = currentCount + 1;
-    let plural = 's';
-    if (newCount === 1) {
-        plural = '';
-    }
-    itemCount.textContent = `(${newCount} item${plural})`;
+    adjustOrderedItemCount(1);
 }
 
 const menuItemData = [
