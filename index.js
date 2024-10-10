@@ -67,6 +67,11 @@ const menuItemData = [
         imgSrc: 'img/caesar-salad.jpg'
     },
     {
+        itemName: 'Fruit cup',
+        itemPrice: .99,
+        imgSrc: 'img/fruit-cup.jpg'
+    },
+    {
         itemName: 'French fries',
         itemPrice: 3.5,
         imgSrc: 'img/french-fries.jpg'
